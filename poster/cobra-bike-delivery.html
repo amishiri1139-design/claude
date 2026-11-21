@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Cobra Bike Delivery</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Cairo:wght@600;800;900&family=Inter:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --jungle:#0a3b2c; --jungle-deep:#06261c; --venom:#c6f432; --gold:#ffc61a;
+    --cream:#fff6e2; --chili:#ff4b2b;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:#111;}
+  .poster{
+    width:1200px;height:1700px;position:relative;overflow:hidden;
+    background:
+      radial-gradient(900px 700px at 70% 52%, #135c43 0%, transparent 70%),
+      linear-gradient(180deg,var(--jungle) 0%, var(--jungle-deep) 100%);
+    color:var(--cream);font-family:Inter,sans-serif;
+  }
+  /* snake-scale texture */
+  .scales{position:absolute;inset:0;opacity:.07;
+    background-image:radial-gradient(circle at 50% 0, transparent 22px, var(--venom) 23px, var(--venom) 25px, transparent 26px);
+    background-size:48px 28px;}
+  .scales.b{background-position:24px 14px}
+
+  /* header */
+  .top{position:absolute;top:64px;left:72px;right:72px;display:flex;justify-content:space-between;align-items:center}
+  .brand{display:flex;align-items:center;gap:18px}
+  .brand .name{font-family:Anton;font-size:46px;letter-spacing:4px;line-height:1}
+  .brand .name small{display:block;font-family:Inter;font-weight:700;font-size:15px;letter-spacing:7px;color:var(--venom);margin-top:6px}
+  .ar-brand{font-family:Cairo;font-weight:900;font-size:40px;color:var(--cream);direction:rtl}
+  .rule{position:absolute;top:156px;left:72px;right:72px;height:3px;background:linear-gradient(90deg,var(--venom),var(--gold) 60%,transparent)}
+
+  /* new badge */
+  .badge{position:absolute;top:200px;right:72px;width:190px;height:190px;border-radius:50%;
+    background:var(--chili);display:flex;flex-direction:column;align-items:center;justify-content:center;
+    transform:rotate(12deg);box-shadow:0 0 0 8px var(--jungle),0 0 0 11px var(--chili);text-align:center;z-index:3}
+  .badge b{font-family:Anton;font-size:56px;line-height:.95;letter-spacing:2px;color:var(--cream)}
+  .badge span{font-family:Cairo;font-weight:900;font-size:30px;line-height:1.1;color:var(--cream)}
+
+  /* headline */
+  .head{position:absolute;top:196px;left:72px}
+  .kicker{font-weight:800;font-size:22px;letter-spacing:8px;color:var(--gold);margin-bottom:8px}
+  .h1{font-family:Anton;text-transform:uppercase;line-height:.86;letter-spacing:1px}
+  .h1 .l1{font-size:150px;display:block}
+  .h1 .l2{font-size:236px;display:block;color:var(--venom);text-shadow:8px 8px 0 var(--jungle-deep)}
+  .h1 .l3{font-size:150px;display:block}
+  .h1 .l3 em{font-style:normal;color:var(--gold)}
+  .ar-head{font-family:Cairo;font-weight:900;font-size:62px;direction:rtl;margin-top:18px;color:var(--cream)}
+  .ar-head span{color:var(--venom)}
+
+  /* bike scene */
+  .scene{position:absolute;top:830px;left:0;right:0;height:440px}
+  .road{position:absolute;left:0;right:0;bottom:46px;height:6px;background:var(--cream);opacity:.9}
+  .dash{position:absolute;left:0;right:0;bottom:20px;height:6px;
+    background:repeating-linear-gradient(90deg,var(--gold) 0 70px,transparent 70px 120px)}
+  .bike{position:absolute;left:330px;bottom:50px;width:680px}
+
+  /* areas */
+  .areas{position:absolute;top:1300px;left:72px;right:72px}
+  .areas .label{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:18px}
+  .areas .label b{font-weight:800;font-size:22px;letter-spacing:8px;color:var(--gold)}
+  .areas .label span{font-family:Cairo;font-weight:800;font-size:28px;color:var(--gold)}
+  .chips{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .chip{background:var(--cream);color:var(--jungle-deep);border-radius:22px;padding:18px 24px;
+    display:flex;align-items:center;gap:18px;box-shadow:10px 10px 0 var(--venom)}
+  .chip svg{flex:none}
+  .chip .t{flex:1;display:flex;justify-content:space-between;align-items:center}
+  .chip .en{font-family:Anton;font-size:44px;white-space:nowrap;letter-spacing:1px;line-height:1}
+  .chip .ar{font-family:Cairo;font-weight:900;font-size:36px;white-space:nowrap;line-height:1}
+
+  /* footer */
+  .foot{position:absolute;left:0;right:0;bottom:0;height:150px;background:var(--venom);color:var(--jungle-deep);
+    display:flex;align-items:center;justify-content:space-between;padding:0 72px}
+  .foot .cta{font-family:Anton;font-size:64px;letter-spacing:2px;line-height:1}
+  .foot .sub{font-weight:800;font-size:20px;letter-spacing:3px;margin-top:6px}
+  .foot .ar{font-family:Cairo;font-weight:900;font-size:44px;direction:rtl;text-align:right;line-height:1.15}
+  .foot .ar small{display:block;font-size:24px;font-weight:800}
+</style>
+</head>
+<body>
+<div class="poster">
+  <div class="scales"></div><div class="scales b"></div>
+
+  <!-- header -->
+  <div class="top">
+    <div class="brand">
+      <svg width="74" height="74" viewBox="0 0 100 100" aria-hidden="true">
+        <circle cx="50" cy="50" r="48" fill="#c6f432"/>
+        <!-- cobra hood -->
+        <path d="M50 14c-17 0-27 15-27 31 0 13 8 21 17 26l-4 15h28l-4-15c9-5 17-13 17-26 0-16-10-31-27-31z" fill="#06261c"/>
+        <path d="M50 26c-9 0-15 8-15 18 0 9 6 15 15 15s15-6 15-15c0-10-6-18-15-18z" fill="#0a3b2c"/>
+        <circle cx="43" cy="40" r="4" fill="#ffc61a"/><circle cx="57" cy="40" r="4" fill="#ffc61a"/>
+        <path d="M50 59v9m0 0l-4 6m4-6l4 6" stroke="#ff4b2b" stroke-width="3" stroke-linecap="round" fill="none"/>
+      </svg>
+      <div class="name">COBRA<small>CAFETERIA</small></div>
+    </div>
+    <div class="ar-brand">كافتيريا كوبرا</div>
+  </div>
+  <div class="rule"></div>
+
+  <!-- badge -->
+  <div class="badge"><b>NOW<br>LIVE</b><span>جديد</span></div>
+
+  <!-- headline -->
+  <div class="head">
+    <div class="kicker">INTRODUCING</div>
+    <div class="h1">
+      <span class="l1">Bike</span>
+      <span class="l2">Delivery</span>
+      <span class="l3">Has <em>Started!</em></span>
+    </div>
+    <div class="ar-head">بدأ <span>التوصيل بالدراجة</span>!</div>
+  </div>
+
+  <!-- bike scene -->
+  <div class="scene">
+    <!-- speed lines -->
+    <svg style="position:absolute;left:40px;bottom:90px" width="330" height="300" viewBox="0 0 330 300" aria-hidden="true">
+      <g stroke-linecap="round" stroke-width="10">
+        <line x1="120" y1="40"  x2="310" y2="40"  stroke="#c6f432"/>
+        <line x1="40"  y1="95"  x2="290" y2="95"  stroke="#fff6e2" opacity=".85"/>
+        <line x1="160" y1="150" x2="320" y2="150" stroke="#ffc61a"/>
+        <line x1="70"  y1="205" x2="300" y2="205" stroke="#c6f432" opacity=".8"/>
+        <line x1="180" y1="255" x2="310" y2="255" stroke="#fff6e2" opacity=".6"/>
+      </g>
+    </svg>
+
+    <svg class="bike" viewBox="0 0 600 380" aria-hidden="true">
+      <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <!-- wheels -->
+        <g stroke="#fff6e2" stroke-width="12">
+          <circle cx="130" cy="290" r="80"/>
+          <circle cx="470" cy="290" r="80"/>
+        </g>
+        <g stroke="#fff6e2" stroke-width="3" opacity=".55">
+          <line x1="130" y1="215" x2="130" y2="365"/><line x1="55" y1="290" x2="205" y2="290"/>
+          <line x1="77" y1="237" x2="183" y2="343"/><line x1="183" y1="237" x2="77" y2="343"/>
+          <line x1="470" y1="215" x2="470" y2="365"/><line x1="395" y1="290" x2="545" y2="290"/>
+          <line x1="417" y1="237" x2="523" y2="343"/><line x1="523" y1="237" x2="417" y2="343"/>
+        </g>
+        <circle cx="130" cy="290" r="9" fill="#ffc61a" stroke="none"/>
+        <circle cx="470" cy="290" r="9" fill="#ffc61a" stroke="none"/>
+
+        <!-- rear rack -->
+        <g stroke="#c6f432" stroke-width="7">
+          <line x1="80" y1="198" x2="215" y2="198"/>
+          <line x1="130" y1="290" x2="100" y2="198"/>
+        </g>
+        <!-- delivery box -->
+        <g>
+          <rect x="70" y="92" width="150" height="104" rx="12" fill="#ff4b2b" stroke="#06261c" stroke-width="5"/>
+          <rect x="70" y="92" width="150" height="24" rx="10" fill="#ffc61a" stroke="#06261c" stroke-width="5"/>
+          <text x="145" y="170" text-anchor="middle" font-family="Anton" font-size="44" fill="#fff6e2" stroke="none" letter-spacing="2">COBRA</text>
+        </g>
+
+        <!-- frame -->
+        <g stroke="#c6f432" stroke-width="14">
+          <line x1="130" y1="290" x2="290" y2="290"/>
+          <line x1="130" y1="290" x2="250" y2="170"/>
+          <line x1="250" y1="170" x2="290" y2="290"/>
+          <line x1="250" y1="175" x2="420" y2="178"/>
+          <line x1="290" y1="290" x2="425" y2="195"/>
+        </g>
+        <line x1="418" y1="160" x2="470" y2="290" stroke="#fff6e2" stroke-width="11"/>
+        <!-- handlebar & seat -->
+        <path d="M412 150 L418 128 L452 122" stroke="#fff6e2" stroke-width="10"/>
+        <line x1="225" y1="160" x2="272" y2="160" stroke="#06261c" stroke-width="14"/>
+        <line x1="250" y1="160" x2="250" y2="172" stroke="#fff6e2" stroke-width="8"/>
+        <!-- crank -->
+        <circle cx="290" cy="290" r="18" fill="#06261c" stroke="#ffc61a" stroke-width="6"/>
+
+        <!-- rider: far leg -->
+        <path d="M262 148 L312 222 L276 318" stroke="#0e5a40" stroke-width="22"/>
+        <!-- torso -->
+        <path d="M258 150 L352 82" stroke="#ffc61a" stroke-width="40"/>
+        <!-- near leg -->
+        <path d="M262 150 L338 210 L310 262" stroke="#06261c" stroke-width="24"/>
+        <line x1="296" y1="262" x2="328" y2="262" stroke="#ff4b2b" stroke-width="12"/>
+        <!-- arm -->
+        <path d="M350 88 L392 120 L440 124" stroke="#ffc61a" stroke-width="18"/>
+        <circle cx="444" cy="124" r="10" fill="#c6f432" stroke="none"/>
+        <!-- head + cap -->
+        <circle cx="384" cy="52" r="27" fill="#fff6e2" stroke="none"/>
+        <path d="M356 46 A29 29 0 0 1 412 40 L432 46 L356 50 Z" fill="#ff4b2b" stroke="none"/>
+      </g>
+    </svg>
+
+    <div class="road"></div>
+    <div class="dash"></div>
+  </div>
+
+  <!-- areas -->
+  <div class="areas">
+    <div class="label"><b>NOW DELIVERING TO</b><span>نوصّل الآن إلى</span></div>
+    <div class="chips">
+      <div class="chip">
+        <svg width="46" height="58" viewBox="0 0 46 58"><path d="M23 2C11 2 2 11 2 23c0 16 21 33 21 33s21-17 21-33C44 11 35 2 23 2z" fill="#ff4b2b"/><circle cx="23" cy="22" r="8" fill="#fff6e2"/></svg>
+        <div class="t"><span class="en">AL-MANAK</span><span class="ar">المناخ</span></div>
+      </div>
+      <div class="chip">
+        <svg width="46" height="58" viewBox="0 0 46 58"><path d="M23 2C11 2 2 11 2 23c0 16 21 33 21 33s21-17 21-33C44 11 35 2 23 2z" fill="#ff4b2b"/><circle cx="23" cy="22" r="8" fill="#fff6e2"/></svg>
+        <div class="t"><span class="en">AL-QASIMIYA</span><span class="ar">القاسمية</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- footer -->
+  <div class="foot">
+    <div>
+      <div class="cta">ORDER NOW!</div>
+      <div class="sub">HOT · FAST · FRESH TO YOUR DOOR</div>
+    </div>
+    <div class="ar">اطلب الآن!<small>ساخن · سريع · لحد باب بيتك</small></div>
+  </div>
+</div>
+</body>
+</html>
