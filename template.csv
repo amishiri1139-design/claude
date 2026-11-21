@@ -1,0 +1,4 @@
+campaign_name,objective,adset_name,daily_budget,countries,age_min,age_max,gender,start_time,ad_name,image,primary_text,headline,description,call_to_action,link_url
+Spring Sale,TRAFFIC,US Women 25-44,20,US,25,44,FEMALE,,Spring - Image A,https://example.com/images/spring-a.jpg,Our spring collection just dropped. Fresh styles at 20% off this week only.,Spring Sale: 20% Off,Free shipping over $50,SHOP_NOW,https://example.com/spring
+Spring Sale,TRAFFIC,US Women 25-44,20,US,25,44,FEMALE,,Spring - Image B,https://example.com/images/spring-b.jpg,New season and new looks. Grab yours before they're gone.,New Arrivals Are Here,Free shipping over $50,SHOP_NOW,https://example.com/spring
+Spring Sale,TRAFFIC,UK + CA All 18-65,15,"GB, CA",18,65,ALL,,Spring - Image A (Intl),https://example.com/images/spring-a.jpg,Our spring collection just dropped. Fresh styles at 20% off this week only.,Spring Sale: 20% Off,,SHOP_NOW,https://example.com/spring
