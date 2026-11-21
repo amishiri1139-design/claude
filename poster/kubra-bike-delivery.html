@@ -2,36 +2,37 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Cobra Bike Delivery</title>
+<title>Kubra Bike Delivery</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Cairo:wght@600;800;900&family=Inter:wght@500;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Marcellus&family=Cairo:wght@600;800;900&family=Inter:wght@500;700;800&display=swap" rel="stylesheet">
 <style>
   :root{
-    --jungle:#0a3b2c; --jungle-deep:#06261c; --venom:#c6f432; --gold:#ffc61a;
-    --cream:#fff6e2; --chili:#ff4b2b;
+    --jungle:#46593a; --jungle-deep:#26331f; --venom:#cddd9c; --gold:#f2c25b;
+    --cream:#fff6e2; --chili:#d9683a;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html,body{background:#111;}
   .poster{
     width:1200px;height:1700px;position:relative;overflow:hidden;
     background:
-      radial-gradient(900px 700px at 70% 52%, #135c43 0%, transparent 70%),
+      radial-gradient(900px 700px at 70% 52%, #58704a 0%, transparent 70%),
       linear-gradient(180deg,var(--jungle) 0%, var(--jungle-deep) 100%);
     color:var(--cream);font-family:Inter,sans-serif;
   }
   /* snake-scale texture */
+  .dots{position:absolute;inset:0;opacity:.08;background-image:radial-gradient(#cddd9c 1.5px,transparent 1.6px);background-size:26px 26px}
   .scales{position:absolute;inset:0;opacity:.07;
     background-image:radial-gradient(circle at 50% 0, transparent 22px, var(--venom) 23px, var(--venom) 25px, transparent 26px);
     background-size:48px 28px;}
   .scales.b{background-position:24px 14px}
 
   /* header */
-  .top{position:absolute;top:64px;left:72px;right:72px;display:flex;justify-content:space-between;align-items:center}
+  .top{position:absolute;top:52px;left:72px;right:72px;display:flex;justify-content:space-between;align-items:center}
   .brand{display:flex;align-items:center;gap:18px}
-  .brand .name{font-family:Anton;font-size:46px;letter-spacing:4px;line-height:1}
+  .brand .name{font-family:Marcellus,serif;font-size:50px;letter-spacing:3px;line-height:1}
   .brand .name small{display:block;font-family:Inter;font-weight:700;font-size:15px;letter-spacing:7px;color:var(--venom);margin-top:6px}
   .ar-brand{font-family:Cairo;font-weight:900;font-size:40px;color:var(--cream);direction:rtl}
-  .rule{position:absolute;top:156px;left:72px;right:72px;height:3px;background:linear-gradient(90deg,var(--venom),var(--gold) 60%,transparent)}
+  .rule{position:absolute;top:166px;left:72px;right:72px;height:3px;background:linear-gradient(90deg,var(--venom),var(--gold) 60%,transparent)}
 
   /* new badge */
   .badge{position:absolute;top:200px;right:72px;width:190px;height:190px;border-radius:50%;
@@ -82,22 +83,15 @@
 </head>
 <body>
 <div class="poster">
-  <div class="scales"></div><div class="scales b"></div>
+  <div class="dots"></div>
 
   <!-- header -->
   <div class="top">
     <div class="brand">
-      <svg width="74" height="74" viewBox="0 0 100 100" aria-hidden="true">
-        <circle cx="50" cy="50" r="48" fill="#c6f432"/>
-        <!-- cobra hood -->
-        <path d="M50 14c-17 0-27 15-27 31 0 13 8 21 17 26l-4 15h28l-4-15c9-5 17-13 17-26 0-16-10-31-27-31z" fill="#06261c"/>
-        <path d="M50 26c-9 0-15 8-15 18 0 9 6 15 15 15s15-6 15-15c0-10-6-18-15-18z" fill="#0a3b2c"/>
-        <circle cx="43" cy="40" r="4" fill="#ffc61a"/><circle cx="57" cy="40" r="4" fill="#ffc61a"/>
-        <path d="M50 59v9m0 0l-4 6m4-6l4 6" stroke="#ff4b2b" stroke-width="3" stroke-linecap="round" fill="none"/>
-      </svg>
-      <div class="name">COBRA<small>CAFETERIA</small></div>
+      <img src="kubra-logo.png" width="96" height="96" alt="" style="border-radius:50%;box-shadow:0 0 0 4px #f8f3df">
+      <div class="name">KUBRA<small>CAFETERIA</small></div>
     </div>
-    <div class="ar-brand">كافتيريا كوبرا</div>
+    <div class="ar-brand">كافتيريا كبرى</div>
   </div>
   <div class="rule"></div>
 
@@ -120,10 +114,10 @@
     <!-- speed lines -->
     <svg style="position:absolute;left:40px;bottom:90px" width="330" height="300" viewBox="0 0 330 300" aria-hidden="true">
       <g stroke-linecap="round" stroke-width="10">
-        <line x1="120" y1="40"  x2="310" y2="40"  stroke="#c6f432"/>
+        <line x1="120" y1="40"  x2="310" y2="40"  stroke="#cddd9c"/>
         <line x1="40"  y1="95"  x2="290" y2="95"  stroke="#fff6e2" opacity=".85"/>
-        <line x1="160" y1="150" x2="320" y2="150" stroke="#ffc61a"/>
-        <line x1="70"  y1="205" x2="300" y2="205" stroke="#c6f432" opacity=".8"/>
+        <line x1="160" y1="150" x2="320" y2="150" stroke="#f2c25b"/>
+        <line x1="70"  y1="205" x2="300" y2="205" stroke="#cddd9c" opacity=".8"/>
         <line x1="180" y1="255" x2="310" y2="255" stroke="#fff6e2" opacity=".6"/>
       </g>
     </svg>
@@ -131,59 +125,59 @@
     <svg class="bike" viewBox="0 0 600 380" aria-hidden="true">
       <g stroke-linecap="round" stroke-linejoin="round">
         <!-- exhaust -->
-        <path d="M265 292 L170 286 L92 270" fill="none" stroke="#ffc61a" stroke-width="14"/>
-        <path d="M92 270 L76 266" stroke="#06261c" stroke-width="16"/>
+        <path d="M265 292 L170 286 L92 270" fill="none" stroke="#f2c25b" stroke-width="14"/>
+        <path d="M92 270 L76 266" stroke="#26331f" stroke-width="16"/>
         <!-- swingarm -->
-        <line x1="130" y1="300" x2="260" y2="262" stroke="#06261c" stroke-width="16"/>
+        <line x1="130" y1="300" x2="260" y2="262" stroke="#26331f" stroke-width="16"/>
         <!-- wheels -->
         <g fill="none">
-          <circle cx="130" cy="300" r="62" stroke="#06261c" stroke-width="24"/>
+          <circle cx="130" cy="300" r="62" stroke="#26331f" stroke-width="24"/>
           <circle cx="130" cy="300" r="40" stroke="#fff6e2" stroke-width="8"/>
-          <circle cx="480" cy="300" r="62" stroke="#06261c" stroke-width="24"/>
+          <circle cx="480" cy="300" r="62" stroke="#26331f" stroke-width="24"/>
           <circle cx="480" cy="300" r="40" stroke="#fff6e2" stroke-width="8"/>
         </g>
         <g stroke="#fff6e2" stroke-width="5" opacity=".7">
           <line x1="130" y1="262" x2="130" y2="338"/><line x1="97" y1="281" x2="163" y2="319"/><line x1="163" y1="281" x2="97" y2="319"/>
           <line x1="480" y1="262" x2="480" y2="338"/><line x1="447" y1="281" x2="513" y2="319"/><line x1="513" y1="281" x2="447" y2="319"/>
         </g>
-        <circle cx="130" cy="300" r="11" fill="#ffc61a"/><circle cx="480" cy="300" r="11" fill="#ffc61a"/>
+        <circle cx="130" cy="300" r="11" fill="#f2c25b"/><circle cx="480" cy="300" r="11" fill="#f2c25b"/>
         <!-- front fender -->
-        <path d="M418 262 A70 70 0 0 1 532 250" fill="none" stroke="#c6f432" stroke-width="12"/>
+        <path d="M418 262 A70 70 0 0 1 532 250" fill="none" stroke="#cddd9c" stroke-width="12"/>
         <!-- fork -->
         <line x1="428" y1="168" x2="480" y2="300" stroke="#fff6e2" stroke-width="14"/>
         <!-- engine -->
-        <rect x="228" y="236" width="96" height="66" rx="12" fill="#1d3a30" stroke="#06261c" stroke-width="5"/>
+        <rect x="228" y="236" width="96" height="66" rx="12" fill="#33442b" stroke="#26331f" stroke-width="5"/>
         <g stroke="#fff6e2" stroke-width="4" opacity=".7">
           <line x1="244" y1="252" x2="308" y2="252"/><line x1="244" y1="266" x2="308" y2="266"/><line x1="244" y1="280" x2="308" y2="280"/>
         </g>
         <!-- rear tail / side panel -->
-        <path d="M150 232 L178 198 L296 202 L292 242 L200 250 Z" fill="#ff4b2b" stroke="#06261c" stroke-width="5"/>
+        <path d="M150 232 L178 198 L296 202 L292 242 L200 250 Z" fill="#d9683a" stroke="#26331f" stroke-width="5"/>
         <!-- tank -->
-        <path d="M282 206 Q326 162 398 182 L392 236 L290 242 Z" fill="#c6f432" stroke="#06261c" stroke-width="5"/>
+        <path d="M282 206 Q326 162 398 182 L392 236 L290 242 Z" fill="#cddd9c" stroke="#26331f" stroke-width="5"/>
         <path d="M300 212 Q330 190 380 198" fill="none" stroke="#fff6e2" stroke-width="6" opacity=".8"/>
         <!-- front fairing -->
-        <path d="M388 186 L428 150 L462 168 L452 228 L392 238 Z" fill="#c6f432" stroke="#06261c" stroke-width="5"/>
+        <path d="M388 186 L428 150 L462 168 L452 228 L392 238 Z" fill="#cddd9c" stroke="#26331f" stroke-width="5"/>
         <!-- headlight -->
-        <circle cx="452" cy="196" r="17" fill="#ffc61a" stroke="#06261c" stroke-width="5"/>
-        <path d="M475 186 L520 176 M477 200 L525 200 M475 214 L520 224" stroke="#ffc61a" stroke-width="5" opacity=".7"/>
+        <circle cx="452" cy="196" r="17" fill="#f2c25b" stroke="#26331f" stroke-width="5"/>
+        <path d="M475 186 L520 176 M477 200 L525 200 M475 214 L520 224" stroke="#f2c25b" stroke-width="5" opacity=".7"/>
         <!-- seat -->
-        <path d="M176 198 Q230 182 292 196 L290 208 L176 208 Z" fill="#06261c"/>
+        <path d="M176 198 Q230 182 292 196 L290 208 L176 208 Z" fill="#26331f"/>
         <!-- rear rack + delivery box -->
-        <line x1="62" y1="198" x2="200" y2="198" stroke="#06261c" stroke-width="8"/>
-        <rect x="58" y="88" width="152" height="108" rx="12" fill="#ff4b2b" stroke="#06261c" stroke-width="5"/>
-        <rect x="58" y="88" width="152" height="24" rx="10" fill="#ffc61a" stroke="#06261c" stroke-width="5"/>
-        <text x="134" y="168" text-anchor="middle" font-family="Anton" font-size="44" fill="#fff6e2" letter-spacing="2">COBRA</text>
+        <line x1="62" y1="198" x2="200" y2="198" stroke="#26331f" stroke-width="8"/>
+        <rect x="58" y="88" width="152" height="108" rx="12" fill="#d9683a" stroke="#26331f" stroke-width="5"/>
+        <rect x="58" y="88" width="152" height="24" rx="10" fill="#f2c25b" stroke="#26331f" stroke-width="5"/>
+        <text x="134" y="168" text-anchor="middle" font-family="Anton" font-size="44" fill="#fff6e2" letter-spacing="2">KUBRA</text>
 
         <!-- rider -->
-        <path d="M250 190 L330 226 L304 276" fill="none" stroke="#06261c" stroke-width="26"/>
-        <path d="M290 280 L326 280" stroke="#ff4b2b" stroke-width="14"/>
-        <path d="M248 186 L338 120" fill="none" stroke="#ffc61a" stroke-width="44"/>
-        <path d="M340 124 L392 156 L432 150" fill="none" stroke="#ffc61a" stroke-width="18"/>
-        <path d="M418 154 L440 140 L462 136" fill="none" stroke="#06261c" stroke-width="10"/>
-        <circle cx="436" cy="150" r="10" fill="#06261c"/>
+        <path d="M250 190 L330 226 L304 276" fill="none" stroke="#26331f" stroke-width="26"/>
+        <path d="M290 280 L326 280" stroke="#d9683a" stroke-width="14"/>
+        <path d="M248 186 L338 120" fill="none" stroke="#f2c25b" stroke-width="44"/>
+        <path d="M340 124 L392 156 L432 150" fill="none" stroke="#f2c25b" stroke-width="18"/>
+        <path d="M418 154 L440 140 L462 136" fill="none" stroke="#26331f" stroke-width="10"/>
+        <circle cx="436" cy="150" r="10" fill="#26331f"/>
         <!-- helmet -->
-        <circle cx="368" cy="90" r="34" fill="#ff4b2b" stroke="#06261c" stroke-width="5"/>
-        <path d="M372 80 L402 80 Q404 102 390 108 L374 104 Z" fill="#06261c"/>
+        <circle cx="368" cy="90" r="34" fill="#d9683a" stroke="#26331f" stroke-width="5"/>
+        <path d="M372 80 L402 80 Q404 102 390 108 L374 104 Z" fill="#26331f"/>
         <path d="M340 78 Q360 60 390 64" fill="none" stroke="#fff6e2" stroke-width="6"/>
       </g>
     </svg>
@@ -197,11 +191,11 @@
     <div class="label"><b>NOW DELIVERING TO</b><span>نوصّل الآن إلى</span></div>
     <div class="chips">
       <div class="chip">
-        <svg width="46" height="58" viewBox="0 0 46 58"><path d="M23 2C11 2 2 11 2 23c0 16 21 33 21 33s21-17 21-33C44 11 35 2 23 2z" fill="#ff4b2b"/><circle cx="23" cy="22" r="8" fill="#fff6e2"/></svg>
+        <svg width="46" height="58" viewBox="0 0 46 58"><path d="M23 2C11 2 2 11 2 23c0 16 21 33 21 33s21-17 21-33C44 11 35 2 23 2z" fill="#d9683a"/><circle cx="23" cy="22" r="8" fill="#fff6e2"/></svg>
         <div class="t"><span class="en">AL-MANAK</span><span class="ar">المناخ</span></div>
       </div>
       <div class="chip">
-        <svg width="46" height="58" viewBox="0 0 46 58"><path d="M23 2C11 2 2 11 2 23c0 16 21 33 21 33s21-17 21-33C44 11 35 2 23 2z" fill="#ff4b2b"/><circle cx="23" cy="22" r="8" fill="#fff6e2"/></svg>
+        <svg width="46" height="58" viewBox="0 0 46 58"><path d="M23 2C11 2 2 11 2 23c0 16 21 33 21 33s21-17 21-33C44 11 35 2 23 2z" fill="#d9683a"/><circle cx="23" cy="22" r="8" fill="#fff6e2"/></svg>
         <div class="t"><span class="en">AL-QASIMIYA</span><span class="ar">القاسمية</span></div>
       </div>
     </div>
