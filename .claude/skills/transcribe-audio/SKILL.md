@@ -57,6 +57,12 @@ file may be silent or music-only; say so.
 
 ## Troubleshooting
 
+- **Transcript is gibberish or in the wrong language**: auto-detection can
+  misfire, especially with accents or background noise (e.g. English detected
+  as Malayalam). Rerun with `--language en` (or the right code) and `--model small`.
+- **Need exact word timings** (e.g. to sync on-screen text): use
+  `word_timestamps=True` in faster-whisper. If words bunch up at one time,
+  re-transcribe short windows around that spot to pin them down.
 - **`403 Forbidden ... no rule allows this host`** while downloading a model:
   the environment's network policy blocks Hugging Face. The model files need
   `huggingface.co` plus its CDN (`us.aws.cdn.hf.co`; other regions use a
