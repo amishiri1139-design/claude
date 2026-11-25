@@ -1,0 +1,70 @@
+# Copy to profile.yaml and fill in.  profile.yaml is git-ignored.
+# Claude uses this plus your resume to answer application questions.
+
+resume_file: "resumes/resume.pdf"   # PDF or DOCX; uploaded where a form asks for a resume
+
+personal:
+  first_name: ""
+  last_name: ""
+  email: ""
+  phone: ""
+  phone_country_code: "+1"
+  city: ""
+  state: ""
+  country: ""
+  zip: ""
+  linkedin_url: ""
+  github_url: ""
+  portfolio_url: ""
+
+work:
+  years_of_experience: 0
+  current_title: ""
+  current_company: ""
+  desired_salary: ""          # e.g. "120000"
+  notice_period: "2 weeks"
+  earliest_start_date: "Immediately"
+  willing_to_relocate: false
+  open_to_remote: true
+  open_to_hybrid: true
+  open_to_onsite: true
+
+eligibility:
+  authorized_to_work: true          # legally authorized in the job's country
+  requires_sponsorship: false       # now or in the future
+  has_drivers_license: true
+  willing_background_check: true
+  willing_drug_test: true
+
+education:
+  highest_degree: ""                # e.g. "Bachelor's"
+  field_of_study: ""
+  school: ""
+  graduation_year: ""
+
+# Years of experience per skill. Used for "How many years of X?" questions.
+# Unlisted skills: Claude estimates from your resume (or answers 0).
+skill_years:
+  Python: 0
+  SQL: 0
+
+languages:
+  English: "Native or bilingual"
+
+# Voluntary self-identification. Leave as "Decline" if you prefer not to say.
+demographics:
+  gender: "Decline to self-identify"
+  race_ethnicity: "Decline to self-identify"
+  veteran_status: "I am not a protected veteran"
+  disability_status: "I don't wish to answer"
+
+# Exact answers for questions you get often. The key is matched against the
+# question text (case-insensitive substring). These win over Claude.
+custom_answers:
+  "how did you hear": "LinkedIn"
+  # "security clearance": "No"
+
+# Extra context for Claude when writing cover letters / free-text answers.
+about_me: |
+  A short paragraph in your own voice: what you're looking for, strengths,
+  anything you'd want a recruiter to know.

@@ -1,0 +1,12 @@
+# Personal data — never commit
+config.yaml
+profile.yaml
+resumes/*
+!resumes/.gitkeep
+browser_data/
+applications.db
+*.csv
+logs/
+__pycache__/
+.venv/
+learned_answers.json

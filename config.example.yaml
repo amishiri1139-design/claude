@@ -1,0 +1,50 @@
+# Copy to config.yaml and edit.  config.yaml is git-ignored.
+
+searches:
+  - keywords: "Software Engineer"
+    location: "United States"
+    remote_only: false
+  - keywords: "Backend Developer"
+    location: "Remote"
+    remote_only: true
+
+sites:
+  linkedin: true
+  indeed: true
+
+indeed:
+  # Use your country's Indeed domain, e.g. ca.indeed.com, uk.indeed.com, in.indeed.com
+  domain: "www.indeed.com"
+
+limits:
+  max_applications_per_run: 25     # total across all sites
+  max_per_site_per_day: 40         # hard daily cap per site (tracked in applications.db)
+  posted_within_days: 7            # only jobs posted in the last N days
+  pages_per_search: 5              # result pages to scan per search
+
+pacing:
+  # Random wait (seconds) between actions and between applications.
+  action_delay: [1.5, 4.0]
+  between_applications: [30, 90]
+
+filters:
+  # Skip a job if its TITLE contains any of these (case-insensitive)
+  exclude_title_keywords: ["senior staff", "principal", "director", "intern"]
+  # Skip these companies entirely
+  exclude_companies: []
+  # 0-100. Claude scores each job against your resume; jobs below this are skipped.
+  # Set to 0 to apply to everything that passes the filters above.
+  min_fit_score: 60
+
+claude:
+  model: "claude-opus-5-5"
+  # If Claude isn't confident about a required screening question, skip the job
+  # instead of guessing.
+  skip_when_unsure: true
+
+browser:
+  headless: false        # keep false: you need to see captchas / verifications
+  user_data_dir: "browser_data"
+
+# true = fill out everything but never press Submit (great for a first test)
+dry_run: true
